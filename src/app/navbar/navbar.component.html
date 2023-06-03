@@ -1,0 +1,84 @@
+<div class="navbar">
+  <header class= "header">
+    <div class="left-section">
+    </div>
+    <div class="middle-section">
+
+    </div>
+    <div  class="right-section">
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="icon-button with a menu">
+        <img class="grid-icon" src="assets/icons/youtube-apps.svg" alt="">
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <span>Redial</span>
+        </button>
+        <button mat-menu-item disabled>
+          <span>Check voice mail</span>
+        </button>
+        <button mat-menu-item>
+          <span>Disable alerts</span>
+        </button>
+      </mat-menu>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="icon-button with a menu">
+      <div class="notifications-icon-container">
+        <img class="notifications-icon" src="assets/icons/notifications.svg" alt="">
+    </div>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <span>Redial</span>
+      </button>
+      <button mat-menu-item disabled>
+        <span>Check voice mail</span>
+      </button>
+      <button mat-menu-item>
+        <span>Disable alerts</span>
+      </button>
+    </mat-menu>
+      <button class="admin-icon-btn"  [matMenuTriggerFor]="menu" aria-label="icon-button with a menu">
+        <img class="admin-icon" src="assets/icons/empathy.png" alt="">
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <span>Redial</span>
+        </button>
+        <button mat-menu-item disabled>
+          <span>Check voice mail</span>
+        </button>
+        <button mat-menu-item>
+          <span>Disable alerts</span>
+        </button>
+      </mat-menu>
+
+    </div>
+
+</header>
+</div>
+
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': ''">
+
+     <div class="logo-container">
+          <button title="logobtn" class="logo" (click)="toggleCollapse()">
+               <img class="logo-icon" src="assets/icons/GoodsGuardian.png" alt="">
+                  </button>
+                    <div class="logo-text" @fadeInOut *ngIf="collapsed">GoodsGuardian</div>
+                <button title="logobtn" class="btn-close" *ngIf="collapsed" (click)="closeSidenav()">
+               <i @rotate class="fal fa-times close-icon"></i>
+           </button>
+     </div>
+
+     <ul class="sidenav-nav">
+          <li class="sidenav-nav-item" *ngFor="let data of navData">
+               <a class="sidenav-nav-link" [routerLink]="[data.routeLink]"
+                     routerLinkActive="active" >
+                 <i class="sidenav-nav-icon" [class]="data.icon"></i>
+                 <span class="sidenav-nav-text" *ngIf="collapsed">{{data.Label}}</span>
+               </a>
+          </li>
+     </ul>
+</div>
+
+
+<!-- [routerLinkActiveOption]="{exact: true}" -->

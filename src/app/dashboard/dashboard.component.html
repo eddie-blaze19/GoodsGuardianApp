@@ -1,0 +1,91 @@
+<div class="pagetitle">
+<h1>Dashboard</h1>
+</div>
+<div class="top-section">
+  <div class="widget-container">
+    <div class="widget">
+      <div class="icon">
+        <img class="widget-icon" src="assets/icons/sales.png" alt="">
+        </div>
+    <div class="value">
+      <p class="top">Sales</p>
+      <p class="bottom">500</p>
+     </div>
+    </div>
+    <div class="widget">
+      <div class="icon">
+        <img class="widget-icon" src="assets/icons/products.png" alt="">
+        </div>
+    <div class="value">
+      <p class="top">Products</p>
+      <p class="bottom">500</p>
+      </div>
+    </div>
+    <div class="widget">
+      <div class="icon">
+        <img class="widget-icon" src="assets/icons/order.png" alt="">
+        </div>
+    <div class="value">
+      <p class="top">Orders</p>
+      <p class="bottom">2000</p>
+      </div>
+    </div>
+    <div class="widget">
+      <div class="icon">
+        <img class="widget-icon" src="assets/icons/expenses.png" alt="">
+        </div>
+    <div class="value">
+      <p class="top">Expenses</p>
+      <p class="bottom">50</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+  <div class="middle-section">
+    <div class="mid-widget-container">
+       <div class="chart-container">
+        <highcharts-chart
+        [Highcharts]="Highcharts"
+        [options] = "chartOptions"
+        style="width: 100%; height: 400px; display: block;"
+      >
+      </highcharts-chart>
+      </div>
+    <div class="InvSum-container">
+        <div class="card-head">
+          Top selling products
+          </div>
+      <div class="card-body">
+
+      </div>
+
+  </div>
+  <div class="InvSum-container">
+    <div class="card-head">
+      New Orders
+      </div>
+  <div class="card-body">
+
+  </div>
+</div>
+</div>
+</div>
+  <div class="bottom-section">
+    <div class="bottom-widget-container">
+      <div class="widget-left">
+        <div class="chart-gauge">
+          <div id="chart-gauge"></div>
+        </div>
+
+          </div>
+      <div class="widget-right">
+            <div id="chart-column"></div>
+          </div>
+    <div class="widget-left">
+      <div class="chart-pie">
+        <div id="chart-pie"></div>
+      </div>
+      </div>
+</div>
+</div>

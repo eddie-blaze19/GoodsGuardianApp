@@ -1,0 +1,159 @@
+.top-section
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      margin-right: 0px
+      margin-left: -30px
+
+      .widget-container
+         display: grid
+         column-gap: 30px
+         width: calc(100% + 5rem)
+
+.widget
+   font-family: Roboto
+   font-size: 22px
+   font-weight: 200
+   display: flex
+   flex-direction: row
+   border-radius: 0.5rem
+   background-color: #fff
+   margin: 1rem 0 1rem 0
+   box-shadow: 0 .25rem .5rem #e6edef
+   width: 100%
+
+   .widget-icon
+     height: 55px
+     padding: 10px
+
+   .icon
+      width: 100px
+      margin-top: 10px
+      text-align: center
+      @media only screen and (max-width: 1000px)
+
+
+   .value
+      text-align: center
+      width: 170px
+      .top
+        font-size: 22px
+        margin-top: 20px
+        margin-left: 100px
+        color: #000
+        @media only screen and (max-width: 1000px)
+          font-size: 20px
+
+      .bottom
+        font-size: 15px
+        color: #000
+        margin-bottom: 10px
+        margin-left: 100px
+        margin-top: -20px
+        @media only screen and (max-width: 1000px)
+          font-size: 13px
+
+.middle-section
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      margin-right: 15px
+      margin-left: -30px
+
+      .mid-widget-container
+         display: grid
+         column-gap: 10px
+         width: calc(100% + 5rem)
+
+      .chart-container
+         font-family: Roboto
+         margin: 1rem 0 1rem 0
+         padding: 1rem 1.5rem
+         border-radius: 0.5rem
+         background-color: #fff
+         box-shadow: 0 .25rem .5rem #e6edef
+         width: 835px
+
+
+      .InvSum-container
+         margin: 1rem 0 1rem 0
+         padding: 1rem 1.5rem
+         border-radius: 0.5rem
+         background-color: #fff
+         box-shadow: 0 .25rem .5rem #e6edef
+         width: 340px
+         .card-head
+             padding: 1rem 1.5rem
+             border-bottom: 1px solid #e6edef
+             font-size: 22px
+             font-weight: 200
+         .card-body
+             padding: 1rem 1.5rem
+
+
+.bottom-section
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      margin-right: -0px
+      margin-left: -35px
+
+      .bottom-widget-container
+         display: grid
+         column-gap: 30px
+         width: calc(100% + 5rem)
+
+      .widget-left
+         display: flex
+         flex-direction: row
+         flex-wrap: wrap
+         margin: 1rem 0 1rem 0
+         padding: 1rem 1.5rem
+         border-radius: 0.5rem
+         background-color: #fff
+         box-shadow: 0 .25rem .5rem #e6edef
+         height: 400px
+         width: 340px
+
+      .chart-gauge,
+      .chart-pie
+         display: block
+         min-width: 364px
+         max-width: 400px
+         height: 200px
+         margin: 0 0
+
+
+
+      .widget-right
+           margin: 1rem 0 1rem 0
+           padding: 1rem 0.5rem
+           border-radius: 0.5rem
+           background-color: #fff
+           box-shadow: 0 .25rem .5rem #e6edef
+           width: 835px
+
+
+@media ( max-width: 850px )
+    .widget-container
+        grid-template-columns: 1fr
+    .mid-widget-container
+        grid-template-columns: 1fr
+
+@media ( min-width: 851px) and ( max-width: 1299px)
+    .widget-container
+        grid-template-columns: 1fr 1fr
+    .mid-widget-container
+        grid-template-columns: 1fr
+
+@media ( min-width: 1300px )
+    .widget-container
+        grid-template-columns: 1fr 1fr 1fr 1fr
+    .mid-widget-container
+        grid-template-columns: 1fr 1fr 1fr
+    .bottom-widget-container
+        grid-template-columns: 1fr 1fr 1fr
+
+
+
+

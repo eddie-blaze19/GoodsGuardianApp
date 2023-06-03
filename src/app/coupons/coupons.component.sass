@@ -1,0 +1,96 @@
+.add
+  height: 50px
+  width: 300px
+  margin-top: 20px
+  font-size: 14px
+  padding: 8px 22px
+  font-weight: 600
+  border-radius: 4px
+  font-family: Rajdhani
+  letter-spacing: 1.07px
+  cursor: pointer
+  transition: all 0.2s ease
+
+.add:active
+   transform: scale 0.96
+
+.center
+   width: 100%
+   height: 3rem
+
+
+.card-s
+   display: flex
+   flex-direction: column
+   border-radius: 0.5rem
+   background-color: #fff
+   margin: 0.5rem 0rem 0rem -2rem
+   box-shadow: 0 .25rem .5rem #e6edef
+
+   .head-s
+       display: flex
+       padding: 1rem 1.5rem
+       border-bottom: 1px solid #e6edef
+       font-size: 2rem
+       font-weight: 600
+       flex-direction: row
+       justify-content: space-between
+
+   .body-s
+       padding: 1rem 1.5rem
+       border-bottom: 1px solid #e6edef
+
+@media ( min-width: 751px) and ( max-width: 1199px)
+      .center
+        width: 30%
+@media ( max-width: 750px )
+      .center
+        width: 2%
+
+.body-s-field
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+
+.container
+  display: block
+  position: relative
+  padding-left: 40px
+  margin-bottom: 20px
+  cursor: pointer
+  font-size: 25px
+
+.container input
+  position: absolute
+  opacity: 0
+  cursor: pointer
+
+.check
+  position: absolute
+  top: 0
+  left: 0
+  height: 30px
+  width: 30px
+  background-color: lightgray
+
+.container:hover input ~ .check
+  background-color: gray
+
+.container input:checked ~ .check
+  background-color: blue
+
+.check:after
+  content: ""
+  position: absolute
+  display: none
+
+.container input:checked ~ .check:after
+  display: block
+
+.container .check:after
+  top: 8px
+  left: 8px
+  width: 15px
+  height: 15px
+  background: white
+

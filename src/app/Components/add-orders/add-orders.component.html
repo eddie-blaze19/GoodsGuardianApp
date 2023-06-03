@@ -1,0 +1,71 @@
+<div mat-dialog-title  >
+  <h3>New Products</h3>
+</div>
+<div mat-dialog-content class="content">
+  <div class="Rows">
+  <mat-form-field appearance="outline">
+    <mat-label>Product</mat-label>
+    <input matInput type="text" placeholder="Iphone 14">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Catagory</mat-label>
+    <mat-select>
+      <mat-option value="one">Class A</mat-option>
+      <mat-option value="two">Class B</mat-option>
+      <mat-option value="two">Class C</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+  <div class="Rows">
+  <mat-form-field appearance="outline">
+    <mat-label>Brand</mat-label>
+    <input matInput type="text"placeholder="ex.Apple">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Quntity</mat-label>
+    <input matInput type="text" placeholder="ex. 20">
+  </mat-form-field>
+
+</div>
+  <div class="Rows">
+  <mat-form-field appearance="outline">
+    <mat-label>SKU</mat-label>
+    <input matInput type="text" placeholder="ex. 2331221">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" >
+    <mat-label>Update Date</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+</div>
+<div class="Rows">
+  <mat-form-field appearance="outline">
+    <mat-label>Status</mat-label>
+    <mat-select>
+      <mat-option value="one">In Stock</mat-option>
+      <mat-option value="two">Out of Stock</mat-option>
+      <mat-option value="two">Coming Soon</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Price</mat-label>
+    <input matInput type="text" placeholder="ex. GHC 2000">
+  </mat-form-field>
+</div>
+<div class="Rows">
+  <mat-form-field appearance="outline">
+    <mat-label>Product Description </mat-label>
+    <input matInput type="text" placeholder="ex. Electronics">
+  </mat-form-field>
+</div>
+</div>
+<div mat-dialog-actions class="actions">
+  <button mat-stroked-button>Close</button>
+  <button mat-stroked-button color="primary">Save</button>
+</div>

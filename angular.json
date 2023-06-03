@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "preserveSymlinks": true,
             "outputPath": "dist/goods-guardian-app",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -30,6 +31,8 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/angular-calendar/css/angular-calendar.css",
+              "src/custom-theme.scss",
               "src/styles.sass"
             ],
             "scripts": []
@@ -93,6 +96,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/angular-calendar/css/angular-calendar.css",
               "src/styles.sass"
             ],
             "scripts": []
