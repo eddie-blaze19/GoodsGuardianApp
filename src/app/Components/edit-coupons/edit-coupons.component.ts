@@ -3,13 +3,14 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { InvertoryApiService } from 'src/app/services/invertory-api.service';
+import { AddCouponsComponent } from '../add-coupons/add-coupons.component';
 
 @Component({
-  selector: 'app-add-coupons',
-  templateUrl: './add-coupons.component.html',
-  styleUrls: ['./add-coupons.component.sass']
+  selector: 'app-edit-coupons',
+  templateUrl: './edit-coupons.component.html',
+  styleUrls: ['./edit-coupons.component.sass']
 })
-export class AddCouponsComponent {
+export class EditCouponsComponent {
 
   CouponsForm: any;
 
@@ -40,35 +41,28 @@ verticalPosition: MatSnackBarVerticalPosition = 'bottom';
       });
 }
 
-    AddCoupon() {
-      if (this.CouponsForm.valid) {
-      this.service.addCoupons(this.CouponsForm.value).subscribe(res => {
-        var closeModalBtn = document.getElementById('add-edit-modal-close');
-        if(closeModalBtn) {
-          closeModalBtn.click();
-        }
-
-        var showAddSuccess = document.getElementById('add-success-alert');
-        if(showAddSuccess) {
-          showAddSuccess.style.display = "block";
-          this.dialogref.close();
-        }
-        setTimeout(function() {
-          if(showAddSuccess) {
-            showAddSuccess.style.display = "none"
+updateCoupon() {
+        this.service.updateProducts(this.CouponsForm.value.id, this.CouponsForm.value).subscribe(result => {
+          var closeModalBtn = document.getElementById('add-edit-modal-close');
+          if(closeModalBtn) {
+            closeModalBtn.click();
           }
-        }, 4000);
-      })
-    }
-      else {
-        this.openSnackBar("Invalid Form")
+          var showUpdateSuccess = document.getElementById('update-success-alert');
+          if(showUpdateSuccess) {
+            showUpdateSuccess.style.display = "block";
+            this.dialogref.close();
+          }
+          setTimeout(function() {
+            if(showUpdateSuccess) {
+              showUpdateSuccess.style.display = "none"
+            }
+          }, 4000);
+        })
 
-       }
-    }
+      }
+      //closes Dialog
+      exit(){
+        this.dialogref.close();
+      }
+      }
 
-//closes Dialog
-exit(){
-  this.dialogref.close();
-}
-
-  }

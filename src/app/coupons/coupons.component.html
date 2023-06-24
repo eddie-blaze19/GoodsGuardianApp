@@ -1,6 +1,20 @@
 <div class="pagetitle">
   <h1>Coupons</h1>
-  <div class="center"></div>
+  <div class="center" >
+
+    <div class="alert-success" role="alert" id="add-success-alert">
+      <p>coupon successfully added! </p>
+     </div>
+
+     <div class="alert-success" role="alert" id="update-success-alert">
+      <p> coupon successfully updated!</p>
+     </div>
+
+     <div class="delete-alert-success" role="alert" id="delete-success-alert">
+       <p>coupon successfully deleted! </p>
+     </div>
+
+  </div>
   <button class="add" mat-stroked-button (click)="openDialog('300ms', '150ms')">New Coupon</button>
 </div>
 
@@ -33,6 +47,15 @@
             <td mat-cell *matCellDef="let row">{{row.description}} </td>
           </ng-container>
 
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef> Action </th>
+            <div class="action-btn">
+            <td mat-cell *matCellDef="let row">
+                <button   (click)="updateCoupon(row.id)" mat-raised-button color="primary">Update</button>
+                <button class="action-btns" (click)="removeCoupon(row.id)" mat-raised-button color ="warn" >Delete</button>
+            </td>
+          </div>
+          </ng-container>
           <tr mat-header-row *matHeaderRowDef="displayedColumns" ></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"(click)="onRowClicked(row)"></tr>
 

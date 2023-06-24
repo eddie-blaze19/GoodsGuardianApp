@@ -73,7 +73,7 @@
           <li class="sidenav-nav-item" *ngFor="let data of navData">
                <a class="sidenav-nav-link" [routerLink]="[data.routeLink]"
                      routerLinkActive="active" >
-                 <i class="sidenav-nav-icon" [class]="data.icon"></i>
+                  <i class="sidenav-nav-icon" [class]="data.icon"></i>
                  <span class="sidenav-nav-text" *ngIf="collapsed">{{data.Label}}</span>
                </a>
           </li>

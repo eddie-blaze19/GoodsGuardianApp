@@ -1,7 +1,33 @@
 <div class="pagetitle" >
   <h1>Sales</h1>
-  <div class="center" ></div>
-  <button class="add" mat-stroked-button (click)="openDialog('300ms', '150ms')">New Customer</button>
+  <div class="center" >
+
+    <div class="alert-success" role="alert" id="add-success-alert">
+      <p>Sale successfully added! </p>
+     </div>
+
+     <div class="alert-success" role="alert" id="update-success-alert">
+      <p> Sale successfully updated!</p>
+     </div>
+
+     <div class="delete-alert-success" role="alert" id="delete-success-alert">
+       <p>Sale successfully deleted! </p>
+     </div>
+
+     <div class="alert-success" role="alert" id="addCus-success-alert">
+      <p>Customer successfully added! </p>
+     </div>
+
+     <div class="alert-success" role="alert" id="updateCus-success-alert">
+      <p> Customer successfully updated!</p>
+     </div>
+
+     <div class="delete-alert-success" role="alert" id="deleteCus-success-alert">
+       <p>Customer successfully deleted! </p>
+     </div>
+  </div>
+  <button class="add" mat-stroked-button (click)="addCustomer()">New Customer</button>
+  <button class="add" mat-stroked-button (click)="addSale()">New Sale </button>
 </div>
 <div class="card-s">
     <mat-form-field>
@@ -15,14 +41,14 @@
               <td mat-cell *matCellDef="let row"> {{row.id}} </td>
             </ng-container>
             <!-- Customer  Column -->
-            <ng-container matColumnDef="customer_name">
+            <ng-container matColumnDef="customerId">
               <th mat-header-cell *matHeaderCellDef mat-sort-header> Customer Name </th>
-              <td mat-cell *matCellDef="let row"> {{row.customer_Name}}</td>
-            </ng-container>
+                <td mat-cell *matCellDef="let row"> {{CustomersMap.get(row.customerId)}} </td>
+                </ng-container>
             <!-- Product  Column -->
-            <ng-container matColumnDef="product_name">
+            <ng-container matColumnDef="productId">
               <th mat-header-cell *matHeaderCellDef mat-sort-header> Product Name </th>
-              <td mat-cell *matCellDef="let row"> {{row.product_Name}}</td>
+              <td mat-cell *matCellDef="let row"> {{ProductsMap.get(row.productId)}} </td>
             </ng-container>
             <!-- Quantity  Column -->
             <ng-container matColumnDef="quantity_name">
@@ -38,17 +64,17 @@
             <!-- Unitprice Column -->
             <ng-container matColumnDef="unitprice">
               <th mat-header-cell *matHeaderCellDef mat-sort-header> Unit Price </th>
-              <td mat-cell *matCellDef="let row">GHC {{row.unitPrice}} </td>
+              <td mat-cell *matCellDef="let row">GH₵ {{row.unitPrice}} </td>
             </ng-container>
             <!-- Coupon Column -->
-            <ng-container matColumnDef="coupon">
+            <ng-container matColumnDef="couponsId">
               <th mat-header-cell *matHeaderCellDef mat-sort-header> Coupon </th>
-              <td mat-cell *matCellDef="let row"> {{row.coupon}}% </td>
+              <td mat-cell *matCellDef="let row"> {{CouponsMap.get(row.couponsId)}}%</td>
             </ng-container>
            <!-- TotalPrice Column -->
              <ng-container matColumnDef="totalprice">
              <th mat-header-cell *matHeaderCellDef mat-sort-header> TotalPrice </th>
-              <td mat-cell *matCellDef="let row"> {{row.totalPrice}} </td>
+              <td mat-cell *matCellDef="let row">GH₵ {{row.totalPrice}} </td>
                </ng-container>
 
             <!-- Payment_method Column -->
@@ -57,22 +83,16 @@
               <td mat-cell *matCellDef="let row"> {{row.payment_method}} </td>
             </ng-container>
 
-            <!-- ProductID Column -->
-            <ng-container matColumnDef="productId">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header> ProductID </th>
-              <td mat-cell *matCellDef="let row"> {{row.productId}} </td>
-            </ng-container>
-          <!-- CustomerID Column -->
-            <ng-container matColumnDef="customerId">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> CustomerID </th>
-              <td mat-cell *matCellDef="let row"> {{row.customerId}} </td>
-              </ng-container>
-            <!-- Coupons Column -->
-            <ng-container matColumnDef="couponsId">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header> CouponsID </th>
-              <td mat-cell *matCellDef="let row"> {{row.couponsId}} </td>
-            </ng-container>
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef> Action </th>
+              <div class="action-btn">
+              <td mat-cell *matCellDef="let row">
+                  <button (click)="updateSale(row)" mat-raised-button color="primary">Update</button>
+                  <button class="action-btns" (click)="removeSale(row)" mat-raised-button color ="warn" >Delete</button>
 
+              </td>
+            </div>
+            </ng-container>
             <tr mat-header-row *matHeaderRowDef="displayedColumns" ></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"(click)="onRowClicked(row)"></tr>
 
@@ -88,6 +108,4 @@
         </div>
 
   </div>
-
-
-
+</div>

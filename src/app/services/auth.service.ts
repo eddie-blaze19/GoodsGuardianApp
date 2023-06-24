@@ -26,6 +26,9 @@ export class AuthService {
   updateuser(id:any,inputdata:any){
     return this.http.put(this.apiurl+'/'+id,inputdata);
   }
+  deleteuser(id:any ){
+    return this.http.delete(this.apiurl+'/'+id );
+  }
 
   isloggedin(){
     return sessionStorage.getItem('username')!=null;
@@ -35,6 +38,6 @@ export class AuthService {
   }
 
   Getaccessbyrole(role:any,menu:any){
-    return this.http.get('https://localhost:7274/api/roleaccesses?role='+role+'&menu='+menu)
+    return this.http.get('https://localhost:7274/api/roleaccesses?role='+role)
   }
 }

@@ -44,11 +44,11 @@ export class SignupComponent {
       this.services.RegisterUser(this.registerform.value).subscribe(result => {
         this.openSnackBar ('Registered successfully')
         this.openSnackBar ('Please contact admin for enable access.')
-        this.router.navigate(['login'])
+
+       this.router.navigate(['login'])
       });
     } else {
       this.openSnackBar ('Please enter valid data.')
     }
   }
-
 }

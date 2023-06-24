@@ -55,14 +55,20 @@ export class PurchasesComponent {
      displayedColumns: string[] =
      ['id', 'vendor','product_name',
       'deliveryDate','unitPrice','quantity',
-      'totalPrice','productId','suppliersId']
+      'totalPrice','productId','suppliersId','action']
+
+
+      updateOrder( code : number){}
+      removeOrder( code : number){}
+
+
 
      applyFilter(event: Event) {
       const filterValue = (event.target as HTMLInputElement).value;
       this.dataSource.filter = filterValue.trim().toLowerCase();
     }
       onRowClicked(row: any) {
-        console.log('Row clicked: ', row);
+        this.openDialog('100ms', '60ms' );
     }
 
 }

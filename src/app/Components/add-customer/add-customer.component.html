@@ -1,92 +1,46 @@
-<form class="form" [formGroup]="Salesform" (ngSubmit)="addCustomer()">
-</form>
-<div mat-dialog-title >
-  <h3>New Customer</h3>
+<div mat-dialog-title   >
+  <div class="dialog-title" >
+  <h3>Add Customer</h3>
 </div>
-
-<div mat-dialog-content>
-
-  <div class="Rows">
-    <mat-form-field appearance="outline">
-      <mat-label>CustomerId</mat-label>
-      <mat-select class="form-control" name="customerId" id="customerId"  [(ngModel)]="customerId"  >
-        <mat-option *ngFor="let Cus of CustomersList$|async" [value]="Cus.id">{{Cus.customer_Name}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-  <mat-form-field appearance="outline" >
-
-    <mat-label>ProductId</mat-label>
-    <mat-select name="productId" id="productId" [(ngModel)]="productId"  >
-      <mat-option *ngFor="let pro of ProductList$|async" [value]="pro.id">{{pro.Product_Name}}</mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <mat-form-field  appearance="outline">
-    <mat-label>CouponId</mat-label>
-    <mat-select [(ngModel)]="couponsId" >
-      <mat-option *ngFor="let couponv of CouponsList$|async" [value]="couponv.id">{{couponv.id}}</mat-option>
-    </mat-select>
-  </mat-form-field>
-
 </div>
-<div class="Rows">
+<form class="form" [formGroup]="CustomerForm" (ngSubmit)="addCustomer()">
+  <div mat-dialog-content class="content">
+    <div class="Rows">
   <mat-form-field appearance="outline">
     <mat-label>Customer Name</mat-label>
-    <input [(ngModel)]="customer_Name" name="customer_Name" matInput type="text"placeholder="customer_Name">
+    <input formControlName="customer_Name" name="customer_Name" matInput type="text"placeholder="customer_Name">
   </mat-form-field>
 
 <mat-form-field appearance="outline" >
-  <mat-label>Product</mat-label>
-  <input [(ngModel)]="product_Name" name="product_Name" matInput type="text"placeholder="product_Name">
+  <mat-label>Customer Code</mat-label>
+  <input formControlName="password" name="password" matInput type="text"placeholder="pass code">
 </mat-form-field>
 </div>
-<div class="Rows">
-  <mat-form-field  appearance="outline">
-    <mat-label>Coupon</mat-label>
-    <input [(ngModel)]="coupon" name="coupon" matInput type="text"placeholder="Coupon number">
-  </mat-form-field>
-
-  <mat-form-field appearance="outline">
-    <mat-label>Quantity</mat-label>
-    <input [(ngModel)]="quantity" name="quantity" matInput type="text"placeholder="ex.2">
-  </mat-form-field>
-</div>
   <div class="Rows">
+
     <mat-form-field  appearance="outline">
-      <mat-label>unitPrice</mat-label>
-      <input [(ngModel)]="unitPrice" name="unitPrice" matInput type="text" placeholder="ex. GHC 2000">
+      <mat-label>...Phone No</mat-label>
+      <input formControlName="phone_no" name="phone_no" matInput type="number" placeholder=" 24 456 665">
+      <span matTextPrefix>+233 &nbsp;</span>
     </mat-form-field>
 
-  <mat-form-field appearance="outline" >
-    <mat-label>Sales Date</mat-label>
-    <input [(ngModel)]="date" name="date" matInput [matDatepicker]="picker" placeholder="02/12/2023">
-   <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
-    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
+    <mat-form-field  appearance="outline">
+      <mat-label>Email</mat-label>
+      <input formControlName="email" name="email"  matInput type="email" placeholder="example@gmail.com">
+    </mat-form-field>
+
 </div>
 <div class="Rows">
   <mat-form-field  appearance="outline">
-    <mat-label>TotalPrice</mat-label>
-    <input [(ngModel)]="totalPrice" name="totalPrice"  matInput type="text" placeholder="ex. GHC 2000">
+    <mat-label>Customer Address</mat-label>
+    <input formControlName="address" name="address"  matInput type="address" placeholder="P. O. BOX 233">
   </mat-form-field>
 
-  <mat-form-field appearance="outline">
-    <mat-label>Payment Method</mat-label>
-    <mat-select [(ngModel)]="payment_method" name="payment_method">
-      <mat-option value="Momo">Momo</mat-option>
-      <mat-option value="Credit Card">Credit Card</mat-option>
-      <mat-option value="Debit Card">Debit Card</mat-option>
-    </mat-select>
-  </mat-form-field>
 </div>
 
-
-
-<div mat-dialog-actions>
-  <button mat-stroked-button>Close</button>
-  <button (click)="addSales()" *ngIf="Sales.id==0" mat-stroked-button color="primary">Add</button>
-  <button (click)="updateSales()"  *ngIf="Sales.id!=0"  mat-stroked-button color="primary">Update</button>
 </div>
-
+<div mat-dialog-actions class="actions">
+  <button type="button"  mat-stroked-button (click)="exit()">Close</button>
+  <button type="submit"  mat-stroked-button  color="primary">Save</button>
+</div>
+</form>

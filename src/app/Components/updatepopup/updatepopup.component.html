@@ -12,13 +12,13 @@
             </mat-select>
         </mat-form-field>
 
-        <section class="section">
-            <br>
-            <mat-checkbox  formControlName="isactive" class="margin">Is Active</mat-checkbox>
-        </section>
-
-    </div>
-    <div mat-dialog-actions>
+               <section class="section">
+              <br>
+              <mat-slide-toggle  formControlName="isactive"
+              color="green" class="margin">   Is Active  </mat-slide-toggle>
+             </section>
+           </div>
+           <div mat-dialog-actions>
         <button type="submit" mat-raised-button color="primary" cdkFocusInitial>Save</button>
         <button mat-raised-button color="warn" mat-dialog-close>Close</button>
     </div>

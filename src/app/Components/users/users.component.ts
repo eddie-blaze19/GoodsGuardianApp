@@ -1,12 +1,13 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms'
+import { FormBuilder} from '@angular/forms'
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
- 
+
 import { MatDialog } from '@angular/material/dialog';
 import { UpdatepopupComponent } from '../updatepopup/updatepopup.component'
 import { AuthService } from 'src/app/services/auth.service';
+import { RemoveComponent } from '../remove/remove.component';
 
 @Component({
   selector: 'app-users',
@@ -15,7 +16,9 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class UsersComponent  implements AfterViewInit {
 
-    constructor(private builder: FormBuilder, private service: AuthService, private dialog: MatDialog) {
+    constructor(private builder: FormBuilder,
+                private service: AuthService,
+                private dialog: MatDialog) {
       this.LoadUser();
     }
     userlist: any;
@@ -37,7 +40,7 @@ export class UsersComponent  implements AfterViewInit {
     displayedColumns: string[] = ['username', 'name', 'email', 'status', 'role', 'action'];
 
     updateuser(code: any) {
-      this.OpenDialog('1000ms', '600ms', code);
+      this.OpenDialog('100ms', '60ms', code);
     }
 
     OpenDialog(enteranimation: any, exitanimation: any, code: string) {
@@ -54,6 +57,23 @@ export class UsersComponent  implements AfterViewInit {
       });
     }
 
+    removeuser(code: any) {
+      this.openDialog('100ms', '60ms', code);
+    }
+
+    openDialog(enteranimation: any, exitanimation: any, code: string) {
+      const popup = this.dialog.open(RemoveComponent, {
+        enterAnimationDuration: enteranimation,
+        exitAnimationDuration: exitanimation,
+        width: '30%',
+        data: {
+          usercode: code
+        }
+      });
+      popup.afterClosed().subscribe(res => {
+        this.LoadUser();
+      });
+    }
 
 
   }

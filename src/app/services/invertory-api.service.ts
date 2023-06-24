@@ -20,11 +20,11 @@ export class InvertoryApiService {
     return this.http.post<any>(this.InvertoryApiUrl + '/Coupons', data);
   }
 
-  updateCoupons(id: number | string, data: any) {
+  updateCoupons(id:any | string, data: any) {
     return this.http.put<any>(this.InvertoryApiUrl + `/Coupons/${id}`, data);
   }
 
-  deleteCoupons(id: number | string) {
+  deleteCoupons(id:any | string) {
     return this.http.delete<any>(this.InvertoryApiUrl + `/Coupons/${id}`);
   }
 
@@ -38,11 +38,11 @@ export class InvertoryApiService {
     return this.http.post<any>(this.InvertoryApiUrl + '/Customers', data);
   }
 
-  updateCustomers(id: number | string, data: any) {
+  updateCustomers(id:any | string, data: any) {
     return this.http.put<any>(this.InvertoryApiUrl + `/Customers/${id}`, data);
   }
 
-  deleteCustomers(id: number | string) {
+  deleteCustomers(id:any | string) {
     return this.http.delete<any>(this.InvertoryApiUrl + `/Customers/${id}`);
   }
 
@@ -56,12 +56,15 @@ export class InvertoryApiService {
     return this.http.post<any>(this.InvertoryApiUrl + '/Product', data);
   }
 
-  updateProducts(id: number | string, data: any) {
+  updateProducts(id:any | string, data: any) {
     return this.http.put<any>(this.InvertoryApiUrl + `/Product/${id}`, data);
   }
 
-  deleteProducts(id: number | string) {
+  deleteProducts(id:any | string) {
     return this.http.delete<any>(this.InvertoryApiUrl + `/Product/${id}`);
+  }
+  getProductById(id:any | string) {
+    return this.http.get(this.InvertoryApiUrl + `/Product/${id}`);
   }
   //Purchases
 
@@ -73,11 +76,11 @@ export class InvertoryApiService {
     return this.http.post<any>(this.InvertoryApiUrl + '/Purchases', data);
   }
 
-  updatePurchases(id: number | string, data: any) {
+  updatePurchases(id:any | string, data: any) {
     return this.http.put<any>(this.InvertoryApiUrl + `/Purchases/${id}`, data);
   }
 
-  deletePurchases(id: number | string) {
+  deletePurchases(id:any | string) {
     return this.http.delete<any>(this.InvertoryApiUrl + `/Purchases/${id}`);
   }
   //Sales
@@ -90,12 +93,15 @@ export class InvertoryApiService {
     return this.http.post<any>(this.InvertoryApiUrl + '/Sales', data);
   }
 
-  updateSales(id: number | string, data: any) {
+  updateSales(id:any | string, data: any) {
     return this.http.put<any>(this.InvertoryApiUrl + `/Sales/${id}`, data);
   }
 
-  deleteSales(id: number | string) {
+  deleteSales(id:any | string) {
     return this.http.delete<any>(this.InvertoryApiUrl + `/Sales/${id}`);
+  }
+  getSaleById(id:any | string) {
+    return this.http.get(this.InvertoryApiUrl + `/Sales/${id}`);
   }
   //Suppliers
 
@@ -107,34 +113,13 @@ export class InvertoryApiService {
     return this.http.post<any>(this.InvertoryApiUrl + '/Suppilers', data);
   }
 
-  updateSuppliers(id: number | string, data: any) {
+  updateSuppliers(id:any | string, data: any) {
     return this.http.put<any>(this.InvertoryApiUrl + `/Suppilers/${id}`, data);
   }
 
-  deleteSuppliers(id: number | string) {
+  deleteSuppliers(id:any | string) {
     return this.http.delete<any>(this.InvertoryApiUrl + `/Suppilers/${id}`);
   }
 
 
-
-  findProduct(
-    productId: number,
-    filter = '',
-    sortOrder = 'asc',
-    pageNumber = 0,
-    pageSize = 3
-  ): Observable<any[]> {
-    {
-      return this.http
-        .get('/api/product', {
-          params: new HttpParams()
-            .set('productId', productId.toString())
-            .set('filter', filter)
-            .set('sortOrder', sortOrder)
-            .set('pageNumber', pageNumber.toString())
-            .set('pageSize', pageSize.toString()),
-        })
-        .pipe(map((res: { [x: string]: any; }) => res['payload']));
-    }
-  }
 }

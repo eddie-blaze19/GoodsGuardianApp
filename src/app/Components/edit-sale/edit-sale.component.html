@@ -1,0 +1,71 @@
+
+<div mat-dialog-title >
+  <h3>Add New Sale</h3>
+</div>
+<form class="form" [formGroup]="SaleForm" (ngSubmit)="updateSale()">
+<div mat-dialog-content class="content">
+<div class="Rows">
+  <mat-form-field appearance="outline">
+    <mat-label>Customer Name</mat-label>
+    <mat-select formControlName="customerId" name="customer_Name" matInput type="text"placeholder="customer_Name">
+      <mat-option *ngFor="let customer of CustomersList" [value]="customer.id">{{customer.customer_Name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+<mat-form-field appearance="outline" >
+  <mat-label>Product</mat-label>
+<mat-select formControlName="productId" name="product_Name" >
+  <mat-option *ngFor="let product of ProductsList" [value]="product.id">{{product.product_Name}}</mat-option>
+</mat-select>
+</mat-form-field>
+
+</div>
+<div class="Rows">
+  <mat-form-field  appearance="outline">
+    <mat-label>Coupon</mat-label>
+    <mat-select formControlName="couponsId" name="coupon" matInput type="number" placeholder="Coupon number" >
+      <mat-option *ngFor="let coupon of CouponsList" [value]="coupon.id">{{coupon.couponName}}</mat-option>
+    </mat-select>
+    </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Quantity</mat-label>
+    <input formControlName="quantity" name="quantity" matInput type="number" placeholder="ex.2">
+  </mat-form-field>
+</div>
+  <div class="Rows">
+    <mat-form-field  appearance="outline">
+      <mat-label>unitPrice</mat-label>
+      <input formControlName="unitPrice" name="unitPrice" matInput type="number" placeholder="ex. GHC 2000">
+    </mat-form-field>
+
+  <mat-form-field appearance="outline" >
+    <mat-label>Sales Date</mat-label>
+    <input formControlName="date" name="date" matInput [matDatepicker]="picker" placeholder="02/12/2023">
+   <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div>
+<div class="Rows">
+  <mat-form-field  appearance="outline">
+    <mat-label>TotalPrice</mat-label>
+    <input formControlName="totalPrice" name="totalPrice"  matInput type="number" placeholder="ex. GHC 2000">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Payment Method</mat-label>
+    <mat-select formControlName="payment_method" name="payment_method">
+      <mat-option value="Momo">Momo</mat-option>
+      <mat-option value="Credit Card">Credit Card</mat-option>
+      <mat-option value="Debit Card">Debit Card</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+</div>
+<div mat-dialog-actions class="actions">
+  <button type="button"  mat-stroked-button (click)="exit()">Close</button>
+  <button type="submit"  mat-stroked-button color="primary">Update</button>
+</div>
+ </form>
+

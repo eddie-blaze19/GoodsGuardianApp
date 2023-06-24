@@ -1,9 +1,10 @@
 <div mat-dialog-title   >
   <div class="dialog-title" >
-  <h2>New Products</h2>
+  <h2>Update Product</h2>
   </div>
 </div>
-<form [formGroup]="ProductForm" (ngSubmit)="AddProduct()">
+<form [formGroup]="ProductForm">
+
 <div mat-dialog-content class="content">
   <div class="Rows">
   <mat-form-field appearance="outline">
@@ -71,6 +72,6 @@
 </div>
 <div mat-dialog-actions class="actions">
   <button type="button"  mat-stroked-button (click)="exit()">Close</button>
-  <button type="submit"  mat-stroked-button color="primary">Save</button>
+  <button type="submit"  mat-stroked-button (click)="updateproduct()" color="primary">Update</button>
 </div>
  </form>

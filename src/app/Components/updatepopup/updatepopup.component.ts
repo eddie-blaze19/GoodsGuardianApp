@@ -24,10 +24,12 @@ export class UpdatepopupComponent implements OnInit {
           {
             "code": "tech",
             "name": "Technician"
+          },
+          {
+            "code": "admin",
+            "name": "Administrator"
           }
         ]
-
-
     }
 
     horizontalPosition: MatSnackBarHorizontalPosition = 'start';
@@ -71,7 +73,6 @@ export class UpdatepopupComponent implements OnInit {
   UpdateUser() {
     this.service.updateuser(this.registerform.value.id, this.registerform.value).subscribe(res => {
       this.openSnackBar('Updated successfully.');
-      this.dialogref.close();
     });
   }
 

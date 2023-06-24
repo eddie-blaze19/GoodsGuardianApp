@@ -43,6 +43,12 @@ import {MatCardModule} from "@angular/material/card";
 import { UsersComponent } from './Components/users/users.component';
 import { UpdatepopupComponent } from './Components/updatepopup/updatepopup.component';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { RemoveComponent } from './Components/remove/remove.component';
+import { EditProductComponent } from './Components/edit-product/edit-product.component';
+import { EditSaleComponent } from './Components/edit-sale/edit-sale.component';
+import { AddSaleComponent } from './Components/add-sale/add-sale.component';
+import { EditCouponsComponent } from './Components/edit-coupons/edit-coupons.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +67,11 @@ import {MatMenuModule} from '@angular/material/menu';
     AddCouponsComponent,
     UsersComponent,
     UpdatepopupComponent,
+    RemoveComponent,
+    EditProductComponent,
+    EditSaleComponent,
+    AddSaleComponent,
+    EditCouponsComponent,
 
   ],
   imports: [
@@ -82,8 +93,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatRadioModule,
     MatSelectModule,
     MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
+    MatPaginatorModule, MatSortModule,
+    MatSlideToggleModule ,
     MatSnackBarModule,
     MatMenuModule,
     ReactiveFormsModule,

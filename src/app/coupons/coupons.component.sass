@@ -47,50 +47,70 @@
       .center
         width: 2%
 
-.body-s-field
-  display: flex
-  flex-direction: row
-  justify-content: space-between
+.mat-mdc-form-field
+  font-size: 14px
+  width: 100%
 
-.container
-  display: block
-  position: relative
-  padding-left: 40px
-  margin-bottom: 20px
-  cursor: pointer
-  font-size: 25px
+.action-btn
+   display: flex
+   flex-direction : row
+   gap: 10px
+.action-btns
+       margin:0 15px 0 10px
 
-.container input
-  position: absolute
+#add-success-alert,
+#update-success-alert,
+#delete-success-alert
+     display: none
+
+.alert-success
+      font: 1em Roboto
+      font-size: 20px
+      margin-left: 300px
+      margin-top: 15px
+      max-width: 600px
+      height: 3rem
+      color: #155724
+      background-color: #d4edda
+      border: 1px solid #c3e6cb
+      border-radius: 4px
+      justify-self: center
+
+.delete-alert-success
+      margin-left: 300px
+      margin-top: 15px
+      max-width: 600px
+      height: 3rem
+      color: #721c24
+      background-color: #f8d7da
+      border: 1px solid #f5c6cb
+      border-radius: 4px
+      justify-self: center
+
+
+#add-success-alert,
+#update-success-alert,
+#delete-success-alert
+  animation-name: fadeInAndOut
+  animation-duration: 4s
+
+
+@-webkit-keyframes fadeInAndOut
+  0%
   opacity: 0
-  cursor: pointer
+  50%
+  opacity: 1
+  100%
+  opacity: 0
 
-.check
-  position: absolute
-  top: 0
-  left: 0
-  height: 30px
-  width: 30px
-  background-color: lightgray
 
-.container:hover input ~ .check
-  background-color: gray
+@keyframes fadeInAndOut
+  0%
+  opacity: 0
+  50%
+  opacity: 1
+  100%
+  opacity: 0
 
-.container input:checked ~ .check
-  background-color: blue
 
-.check:after
-  content: ""
-  position: absolute
-  display: none
-
-.container input:checked ~ .check:after
-  display: block
-
-.container .check:after
-  top: 8px
-  left: 8px
-  width: 15px
-  height: 15px
-  background: white
 
