@@ -1,0 +1,172 @@
+.top-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: 0px;
+  margin-left: -30px;
+}
+.top-section .widget-container {
+  display: grid;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  width: calc(100% + 5rem);
+}
+
+.widget {
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: 200;
+  display: flex;
+  flex-direction: row;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  margin: 1rem 0 1rem 0;
+  box-shadow: 0 0.25rem 0.5rem #e6edef;
+  width: 100%;
+}
+.widget .widget-icon {
+  height: 55px;
+  padding: 10px;
+}
+.widget .icon {
+  width: 100px;
+  margin-top: 10px;
+  text-align: center;
+}
+.widget .value {
+  text-align: center;
+  width: 170px;
+}
+.widget .value .top {
+  font-size: 22px;
+  margin-top: 20px;
+  margin-left: 100px;
+  color: #000;
+}
+@media only screen and (max-width: 1000px) {
+  .widget .value .top {
+    font-size: 20px;
+  }
+}
+.widget .value .bottom {
+  font-size: 15px;
+  color: #000;
+  margin-bottom: 10px;
+  margin-left: 100px;
+  margin-top: -20px;
+}
+@media only screen and (max-width: 1000px) {
+  .widget .value .bottom {
+    font-size: 13px;
+  }
+}
+
+.middle-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: 15px;
+  margin-left: -30px;
+}
+.middle-section .mid-widget-container {
+  display: grid;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  width: calc(100% + 5rem);
+}
+.middle-section .chart-container {
+  font-family: Roboto;
+  margin: 1rem 0 1rem 0;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 0.25rem 0.5rem #e6edef;
+  width: 835px;
+}
+.middle-section .InvSum-container {
+  margin: 1rem 0 1rem 0;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 0.25rem 0.5rem #e6edef;
+  width: 340px;
+}
+.middle-section .InvSum-container .card-head {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e6edef;
+  font-size: 22px;
+  font-weight: 200;
+}
+.middle-section .InvSum-container .card-body {
+  padding: 1rem 1.5rem;
+}
+
+.bottom-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: 0px;
+  margin-left: -35px;
+}
+.bottom-section .bottom-widget-container {
+  display: grid;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  width: calc(100% + 5rem);
+}
+.bottom-section .widget-left {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 1rem 0 1rem 0;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 0.25rem 0.5rem #e6edef;
+  height: 400px;
+  width: 340px;
+}
+.bottom-section .chart-gauge,
+.bottom-section .chart-pie {
+  display: block;
+  min-width: 364px;
+  max-width: 400px;
+  height: 200px;
+  margin: 0 0;
+}
+.bottom-section .widget-right {
+  margin: 1rem 0 1rem 0;
+  padding: 1rem 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 0.25rem 0.5rem #e6edef;
+  width: 835px;
+}
+
+@media (max-width: 850px) {
+  .widget-container {
+    grid-template-columns: 1fr;
+  }
+  .mid-widget-container {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 851px) and (max-width: 1299px) {
+  .widget-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .mid-widget-container {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 1300px) {
+  .widget-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .mid-widget-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .bottom-widget-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}/*# sourceMappingURL=dashboard.component.css.map */

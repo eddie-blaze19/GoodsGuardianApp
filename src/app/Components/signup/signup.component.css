@@ -1,0 +1,13 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+  margin: 130px 500px;
+}
+
+.mat-mdc-form-field {
+  width: 100%;
+  aline-content: center;
+  justify-self: center;
+}/*# sourceMappingURL=signup.component.css.map */

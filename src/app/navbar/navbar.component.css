@@ -1,0 +1,225 @@
+.navbar {
+  height: 20px;
+  display: flex;
+  width: 100%;
+  background-color: #333;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 90;
+  padding-left: 5rem;
+  padding-bottom: 3rem;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(228, 228, 228);
+}
+
+.admin-icon-btn {
+  height: 3rem;
+  background-color: #fff;
+  border: 2px solid #efefef;
+  border-radius: 1.5rem;
+}
+
+.admin-icon {
+  height: 2.4rem;
+  background-color: #000;
+  border: 2px solid #fff;
+  background-color: #efefef;
+  border-radius: 50%;
+}
+
+.notifications-icon {
+  margin-top: 2px;
+  height: 22px;
+  margin-right: 5px;
+  background-color: #fff;
+}
+
+.grid-icon {
+  height: 22px;
+  margin-right: 15px;
+  background-color: #fff;
+}
+
+.header {
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.middle-section {
+  flex: 1;
+  margin-top: 15px;
+  margin-left: 0px;
+  margin-right: 95px;
+  max-width: 280px;
+  display: flex;
+  align-items: center;
+}
+
+.right-section {
+  width: 180px;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.sidenav {
+  background: #333;
+  transition: all 0.5s ease;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  width: 5rem;
+  height: 100vh;
+  border-right: solid 3px rgba(228, 228, 228, 0.03);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  font-family: "Rajdhani";
+  padding: 0.938rem 0.938rem 0 0.938rem;
+  width: 100%;
+  margin-top: -7px;
+}
+.logo-container .logo {
+  background: #333;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 2rem;
+  font-size: 24px;
+  cursor: pointer;
+  border: none;
+}
+.logo-container .logo .logo-icon {
+  width: 3rem;
+  height: 3rem;
+  z-index: 100;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background-color: #efefef;
+}
+
+.logo-text {
+  margin-left: 1.5rem;
+  font-size: 26px;
+  font-weight: 900;
+  font-family: Rajdhani;
+  color: #fff;
+}
+
+.btn-close {
+  margin-left: 20px;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+}
+.btn-close .fa-times {
+  color: #000;
+  font-size: 24px;
+}
+
+.sidenav-collapsed {
+  width: 17.5625rem;
+}
+
+.sidenav-nav {
+  list-style: none;
+  padding: 0.938rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  justify-items: start;
+  height: calc(100% - 3.65rem);
+  cursor: pointer;
+}
+.sidenav-nav .sidenav-nav-items {
+  width: 100%;
+  margin-bottom: 0.625rem;
+  align-items: center;
+  justify-content: start;
+  justify-items: start;
+}
+.sidenav-nav .sidenav-nav-link {
+  display: flex;
+  align-items: center;
+  justify-items: start;
+  height: 3rem;
+  color: #000;
+  border-radius: 0.625rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.sidenav-nav .sidenav-nav-link .sidenav-link-icon {
+  font-size: 22px;
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 0.5rem;
+  text-align: center;
+}
+
+.sidenav-nav-text {
+  margin-left: 1.5rem;
+}
+
+.sidenav-nav-item:hover .sidenav-nav-link {
+  background-color: #fff;
+  color: #000;
+}
+
+.active {
+  font-size: 22px;
+  color: #000;
+}
+.active .sidenav-link-text {
+  color: #000;
+}
+
+.filter-bar {
+  flex: 1;
+  height: 30px;
+  padding-left: 10px;
+  font-size: 16px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(240, 240, 240);
+  border-radius: 0.5rem;
+  box-shadow: inset 1px 2px 5px rgba(0, 0, 0, 0.05);
+  width: 500px;
+}
+
+.search-button {
+  height: 34px;
+  width: 34px;
+  background: #fff;
+  border-color: rgb(240, 240, 240);
+  transition: all 0.2s ease;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-style: solid;
+  margin-right: 10px;
+  margin-left: -35px;
+}/*# sourceMappingURL=navbar.component.css.map */

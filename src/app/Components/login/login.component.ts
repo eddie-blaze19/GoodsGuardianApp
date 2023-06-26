@@ -10,6 +10,10 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.sass']
 })
 export class LoginComponent {
+
+  title = 'backpic';
+  appimage: string = "assets/background-image.jpg"
+
   constructor(
     private builder: FormBuilder,
     private _snackBar: MatSnackBar,
@@ -35,7 +39,7 @@ export class LoginComponent {
     name: this.builder.control('', Validators.required),
     password: this.builder.control('', Validators.required)
   });
- 
+
   proceedlogin() {
     if (this.loginform.valid) {
       this.services.GetUserbyCode(this.loginform.value.name).subscribe(item => {

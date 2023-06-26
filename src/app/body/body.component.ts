@@ -6,6 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./body.component.sass']
 })
 export class BodyComponent {
+  
+  title = 'backpic';
+  appimage: string = "assets/background-image.jpg"
 
    @Input() collapsed = false;
    @Input()  screenWidth = 0;

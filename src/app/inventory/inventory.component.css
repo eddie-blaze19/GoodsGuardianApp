@@ -1,0 +1,102 @@
+.add {
+  height: 50px;
+  width: 300px;
+  margin-top: 20px;
+  font-size: 14px;
+  padding: 8px 22px;
+  font-weight: 600;
+  border-radius: 4px;
+  font-family: Rajdhani;
+  letter-spacing: 1.07px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add:active {
+  transform: scale 0.96;
+}
+
+.center {
+  width: 100%;
+  height: 3rem;
+  justify-self: center;
+}
+
+.card-p {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  margin: 0.5rem 0rem 0rem -2rem;
+  box-shadow: 0 0.25rem 0.5rem #e6edef;
+  height: 700px;
+}
+
+@media (min-width: 751px) and (max-width: 1199px) {
+  .center {
+    width: 30%;
+  }
+}
+@media (max-width: 750px) {
+  .center {
+    width: 2%;
+  }
+}
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.action-btn {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.action-btns {
+  margin: 0 15px 0 10px;
+}
+
+#add-success-alert,
+#update-success-alert,
+#delete-success-alert {
+  display: none;
+}
+
+.alert-success {
+  font: 1em Roboto;
+  font-size: 20px;
+  margin-left: 300px;
+  margin-top: 15px;
+  max-width: 600px;
+  height: 3rem;
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+  justify-self: center;
+}
+
+.delete-alert-success {
+  margin-left: 300px;
+  margin-top: 15px;
+  max-width: 600px;
+  height: 3rem;
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  justify-self: center;
+}
+
+#add-success-alert,
+#update-success-alert,
+#delete-success-alert {
+  animation-name: fadeInAndOut;
+  animation-duration: 4s;
+}
+@keyframes fadeInAndOut {
+  opacity: 0;
+  opacity: 1;
+  opacity: 0;
+}/*# sourceMappingURL=inventory.component.css.map */
